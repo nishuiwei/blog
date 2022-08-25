@@ -1,0 +1,20 @@
+:root {
+	--global-max-width: 1280px;
+	--global-hover-color: #e50b4f;
+	--button-fill-bg: #f9d400;
+	--button-fill-color: #080c21;
+	--color-secondary: #f9d400;
+	--text-color: #14182c;
+	--background: #fafafa;
+	--border-color: #6b6b6b;
+	--button-color: #6b6b6b;
+	--name-color: #4c4c4c;
+}
+
+[data-theme='dark'] {
+	--text-color: #f2f2f2;
+	--background: #080c21;
+	--border-color: #d2d2d2;
+	--button-color: #d2d2d2;
+	--name-color: #e5e5e5;
+}

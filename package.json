@@ -1,0 +1,19 @@
+{
+	"private": true,
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev --port 4000",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview"
+	},
+	"devDependencies": {
+		"@nuxt/image-edge": "^1.0.0-27657146.da85542",
+		"@nuxtjs/tailwindcss": "^5.3.2",
+		"autoprefixer": "^10.4.8",
+		"nuxt": "3.0.0-rc.8"
+	},
+	"dependencies": {
+		"prisma": "^4.2.1",
+		"sass": "^1.54.5"
+	}
+}
