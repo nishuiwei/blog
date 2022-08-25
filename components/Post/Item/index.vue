@@ -1,5 +1,5 @@
 <template>
-	<article class="col-span-12 md:col-span-6">
+	<article class="col-span-12 xs:col-span-6">
 		<!-- 背景图片 -->
 		<div
 			class="h-72 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg"
