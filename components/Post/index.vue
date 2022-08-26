@@ -1,9 +1,18 @@
 <template>
 	<section>
 		<div class="grid grid-cols-12 mx-auto sm:px-4 gap-6 px-4">
-			<template v-for="i in 10">
-				<PostItem />
+			<template v-for="item in homePosts">
+				<PostItem :post="item" />
 			</template>
 		</div>
 	</section>
 </template>
+
+<script setup>
+const props = defineProps({
+	homePosts: {
+		type: Array,
+		required: true,
+	},
+})
+</script>

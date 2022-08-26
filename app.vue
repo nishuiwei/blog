@@ -22,7 +22,7 @@
 				</header>
 				<!-- left  -->
 				<div class="col-span-12 xl:col-span-9 lg:col-span-8">
-					<Post />
+					<router-view />
 				</div>
 				<!-- right -->
 				<div
