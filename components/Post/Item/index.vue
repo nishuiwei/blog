@@ -2,8 +2,10 @@
 	<article class="col-span-12 xs:col-span-6">
 		<!-- 背景图片 -->
 		<div
-			class="h-72 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg"
-		></div>
+			class="flex h-72 rounded-lg items-center justify-center text-5xl cursor-pointer bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+		>
+			72 X 72
+		</div>
 		<!-- 按钮 -->
 		<div class="flex items-center pt-5 gap-3">
 			<nuxt-link
@@ -18,7 +20,7 @@
 			<h2 class="text-2xl">
 				<nuxt-link
 					:class="[defaultHoverText, defaultTransition]"
-					class="font-bold text-him-100 dark:text-dim-200"
+					class="font-bold text-gray-900 dark:text-dim-200"
 				>
 					5 ways an electric bike will change your life
 				</nuxt-link>
