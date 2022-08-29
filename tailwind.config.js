@@ -20,7 +20,7 @@ module.exports = {
 					400: '#212437', // 卡片边框颜色
 					500: '#14182c', // 卡片背景颜色
 					600: '#f9d400',
-					700: '#192734',
+					700: '#1c1f33',
 					800: '#162d40',
 					900: '#15202b',
 				},
@@ -31,7 +31,15 @@ module.exports = {
 					400: '#e50b4f', // 高亮
 				},
 			},
+			typography: (theme) => ({
+				DEFAULT: {
+					h1: {
+						color: theme('colors.gray.800'),
+						// ...
+					},
+				},
+			}),
 		},
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/typography')],
 }

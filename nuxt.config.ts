@@ -29,10 +29,10 @@ export default defineNuxtConfig({
 				},
 			],
 			link: [
-				{
-					rel: 'stylesheet',
-					href: './style/theme.scss',
-				},
+				// {
+				// 	rel: 'stylesheet',
+				// 	href: './style/theme.scss',
+				// },
 			],
 		},
 	},

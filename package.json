@@ -9,10 +9,12 @@
 	"devDependencies": {
 		"@nuxt/image-edge": "^1.0.0-27657146.da85542",
 		"@nuxtjs/tailwindcss": "^5.3.2",
+		"@tailwindcss/typography": "^0.5.4",
 		"autoprefixer": "^10.4.8",
 		"nuxt": "3.0.0-rc.8"
 	},
 	"dependencies": {
+		"@bytemd/vue-next": "^1.17.2",
 		"@prisma/client": "4.2.1",
 		"prisma": "^4.2.1",
 		"sass": "^1.54.5"

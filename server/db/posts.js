@@ -6,12 +6,12 @@ export const getPosts = (params = {}) => {
 	})
 }
 
-// export const getTweetById = (tweetId, params = {}) => {
-// 	return prisma.tweet.findUnique({
-// 		...params,
-// 		where: {
-// 			...params.where,
-// 			id: tweetId,
-// 		},
-// 	})
-// }
+export const getPostById = (postId, params = {}) => {
+	return prisma.articles.findUnique({
+		...params,
+		where: {
+			...params.where,
+			id: postId,
+		},
+	})
+}
