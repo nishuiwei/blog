@@ -9,32 +9,21 @@ datasource db {
 
 model articles {
   id            String @id @default(auto()) @map("_id") @db.ObjectId
+  v             Int    @map("__v")
   abstract      String
   article_image String
-  type          articletypes @relation(fields: [article_type], references: [id])
   article_label String @db.ObjectId
   article_type  String @db.ObjectId
   content       String
   createdAt     String
   title         String
   updatedAt     String
-  author        users @relation(fields: [user], references: [id])
   user          String @db.ObjectId
-}
-
-model users {
-  id         String   @id @default(auto()) @map("_id") @db.ObjectId
-  articles   articles[] 
-  createdAt  String
-  email      String   @unique()
-  password   String
-  profilePic String
-  updatedAt  String
-  username   String 
 }
 
 model articletags {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  v           Int      @map("__v")
   articles    String[] @db.ObjectId
   createdAt   DateTime @db.Date
   description String
@@ -44,7 +33,8 @@ model articletags {
 
 model articletypes {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  articles    articles[]
+  v           Int      @map("__v")
+  articles    String[] @db.ObjectId
   createdAt   DateTime @db.Date
   description String
   label       String
@@ -53,6 +43,7 @@ model articletypes {
 
 model menus {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  v           Int      @map("__v")
   createdAt   String
   icon        String
   name        String
@@ -62,8 +53,18 @@ model menus {
   updatedAt   String
 }
 
+model messageboards {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  v         Int    @map("__v")
+  content   String
+  createdAt String
+  updatedAt String
+  user      String @db.ObjectId
+}
+
 model rolebemenus {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  v         Int      @map("__v")
   createdAt String
   menus     String[] @db.ObjectId
   role      String   @db.ObjectId
@@ -72,6 +73,7 @@ model rolebemenus {
 
 model roles {
   id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  v           Int     @map("__v")
   createdAt   String
   description String
   name        String
@@ -79,7 +81,32 @@ model roles {
   user        String? @db.ObjectId
 }
 
-model userberoles {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+model tracks {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  v         Int    @map("__v")
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  article   Json?
+  createdAt String
+  form_page String
+  ip        String
+  ip_count  Int
+  to_page   String
+  updatedAt String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  user      Json?
 }
 
+model users {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  v          Int?     @map("__v")
+  articles   String[] @db.ObjectId
+  createdAt  String?
+  email      String?  @unique(map: "email_1")
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  likes      Json?
+  password   String?
+  profilePic String?
+  role       String?  @db.ObjectId
+  updatedAt  String?
+  username   String?  @unique(map: "username_1")
+}

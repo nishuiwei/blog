@@ -14,6 +14,10 @@
 		"nuxt": "3.0.0-rc.8"
 	},
 	"dependencies": {
+		"@bytemd/plugin-frontmatter": "^1.17.2",
+		"@bytemd/plugin-gfm": "^1.17.2",
+		"@bytemd/plugin-highlight-ssr": "^1.17.2",
+		"@bytemd/plugin-medium-zoom": "^1.17.2",
 		"@bytemd/vue-next": "^1.17.2",
 		"@prisma/client": "4.2.1",
 		"prisma": "^4.2.1",

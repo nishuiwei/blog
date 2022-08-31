@@ -29,13 +29,14 @@ module.exports = {
 					200: '#4c4c4c',
 					300: '#eff1f3', // 卡片边框颜色
 					400: '#e50b4f', // 高亮
+					500: '#fafafa',
 				},
 			},
 			typography: (theme) => ({
+				// console.log(theme)
 				DEFAULT: {
 					h1: {
 						color: theme('colors.gray.800'),
-						// ...
 					},
 				},
 			}),

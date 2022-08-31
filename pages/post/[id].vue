@@ -1,7 +1,7 @@
 <template>
 	<div v-if="!loading">
 		<!-- <preview-card title=""> -->
-		<lazy-post-details :post="post" />
+		<post-details :post="post" />
 		<!-- </preview-card> -->
 	</div>
 </template>
@@ -12,14 +12,12 @@ const { getPostById } = usePost()
 const post = ref({})
 const loading = ref(true)
 
-const getPostIdFormRoute = () => {
-	return useRoute().params.id
-}
-
+const route = useRoute()
+const id = route.params.id
 onBeforeMount(async () => {
 	loading.value = true
 	try {
-		const { data } = await getPostById(getPostIdFormRoute())
+		const { data } = await getPostById(id)
 		console.log(data)
 		post.value = data
 	} catch (error) {

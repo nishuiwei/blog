@@ -10,12 +10,12 @@ export default () => {
 		if (process.client) {
 			darkColor = window?.matchMedia('(prefers-color-scheme: dark)')
 		}
-		if (darkColor.matches) {
-			setDarkMode(true)
-		} else {
-			// 浅色
-			setDarkMode(false)
-		}
+		// if (darkColor.matches) {
+		// 	setDarkMode(true)
+		// } else {
+		// 	// 浅色
+		setDarkMode(false)
+		// }
 	}
 
 	return {

@@ -1,7 +1,10 @@
 <template>
-	<div>
+	<div class="w-auto">
 		<!-- <post-item :post="post" /> -->
-		<article class="prose m-auto" :class="[blockquote, defaultTransition]">
+		<article
+			class="prose dark:prose-invert m-auto w-10/12"
+			:class="[defaultTransition]"
+		>
 			<Viewer
 				:value="props.post.content"
 				:tabindex="2"
@@ -13,7 +16,15 @@
 </template>
 
 <script setup>
+import highlightSSR from '@bytemd/plugin-highlight-ssr'
+import gfm from '@bytemd/plugin-gfm'
+import frontMatter from '@bytemd/plugin-frontmatter'
+import mediumZoom from '@bytemd/plugin-medium-zoom'
 import { Viewer } from '@bytemd/vue-next'
+import LazyHeaderDetail from '~~/components/header/detail.vue'
+const { setAdvicon } = useAdv()
+setAdvicon(LazyHeaderDetail)
+
 const props = defineProps({
 	post: {
 		type: Object,
@@ -21,31 +32,11 @@ const props = defineProps({
 		default: {},
 	},
 })
+
 const { defaultTransition } = useStyle()
-const plugins = ref([])
+const plugins = ref([highlightSSR(), mediumZoom(), gfm(), frontMatter()])
 useHead({
 	titleTemplate: (title) => `${props.post.title} - ${title}`,
 	meta: [{ name: 'description', content: `${props.post.abstract}` }],
 })
-
-const blockquote = `prose-blockquote:before:content-['‟'] 
-prose-blockquote:before:p-9 prose-blockquote:before:text-him-400 prose-blockquote:before:font-extrabold prose-blockquote:before:text-8xl prose-blockquote:before:text-center prose-blockquote:before:border-l-him-400 `
 </script>
-
-<style>
-/* lockquote:before {
-  color: #e50b4f;
-  color: var(--color-primary);
-  content: "‟";
-  font-family: sans-serif;
-  font-size: 6rem;
-  font-weight: 800;
-  font-weight: var(--font-weight-extra-bold);
-  left: 0;
-  line-height: 3rem;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  top: 0;
-} */
-</style>

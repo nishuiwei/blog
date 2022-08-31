@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="border rounded-md bg-zinc-50 dark:bg-dim-500 overflow-hidden p-3 mb-10"
+		class="border rounded-md bg-zinc-50 dark:bg-dim-500 overflow-hidden p-5 mb-10"
 		:class="twitterBorderColor"
 	>
 		<h5
