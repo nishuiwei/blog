@@ -9,7 +9,7 @@ datasource db {
 
 model articles {
   id            String @id @default(auto()) @map("_id") @db.ObjectId
-  v             Int    @map("__v")
+  
   abstract      String
   article_image String
   article_label String @db.ObjectId

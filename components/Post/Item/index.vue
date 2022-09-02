@@ -2,7 +2,7 @@
 	<article class="col-span-12 xs:col-span-6 text-amber-500">
 		<!-- 背景图片 -->
 		<div
-			class="flex h-72 rounded-lg items-center justify-center text-5xl cursor-pointer border border-him-300 dark:border-dim-400 overflow-hidden dark:bg-gray-900 bg-neutral-300"
+			class="flex w-full rounded-lg items-center justify-center text-5xl cursor-pointer border border-him-300 dark:border-dim-400 overflow-hidden dark:bg-gray-900 bg-neutral-300"
 		>
 			<!-- 72 X 72 -->
 			<transition
@@ -11,15 +11,20 @@
 				enter-from-class="blur-lg opacity-75"
 				enter-to-class="blur-none opacity-100"
 			>
-				<nuxt-img
-					v-if="props.post?.mediaFile"
-					:src="props.post?.mediaFile"
-					:alt="props.post?.title"
+				<nuxt-link
+					:to="`/post/${props.post?.id}`"
 					:title="props.post?.title"
-					:lazy="props.index >= 5"
-					class="hover:scale-105 transition duration-500 ease-in-out h-full object-cover w-full rounded-sm"
-					format="webp"
-				/>
+					class="w-full h-full"
+				>
+					<nuxt-img
+						v-if="props.post?.mediaFile"
+						:src="props.post?.mediaFile"
+						:alt="props.post?.title"
+						:title="props.post?.title"
+						class="hover:scale-105 transition duration-500 ease-in-out h-full object-cover w-full rounded-sm"
+						format="webp"
+					/>
+				</nuxt-link>
 			</transition>
 		</div>
 		<!-- 按钮 -->

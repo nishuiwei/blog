@@ -1,5 +1,4 @@
 export default () => {
-	const usePostDetail = () => useState('detail')
 	const getHomePosts = () => {
 		return new Promise(async (resolve, reject) => {
 			try {
@@ -12,19 +11,10 @@ export default () => {
 			}
 		})
 	}
-	const setPostDateil = (post) => {
-		const detail = usePostDetail()
-		detail.value = post
-	}
-
 	const getPostById = (postId) => {
-		console.log(postId)
 		return new Promise(async (resolve, reject) => {
 			try {
-				const response = await useFetchApi(`/api/posts/${postId}`, {
-					method: 'GET',
-				})
-				setPostDateil(response.data)
+				const response = await useFetchApi(`/api/posts/${postId}`)
 				resolve(response)
 			} catch (error) {
 				reject(error)
@@ -35,6 +25,5 @@ export default () => {
 	return {
 		getHomePosts,
 		getPostById,
-		usePostDetail,
 	}
 }
