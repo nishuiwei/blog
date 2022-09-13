@@ -1,14 +1,11 @@
 <template>
 	<section>
-		<div
-			class="grid grid-cols-12 m-auto gap-6 list-card"
-			v-if="posts.length !== 0"
-		>
+		<div class="grid grid-cols-12 m-auto lg:gap-8 gap-6 list-card">
+			<!-- <div class="w-full">加载中。。。</div> -->
 			<template v-for="(item, index) in posts" :key="item.id">
 				<PostItem :post="item" :index="index" />
 			</template>
 		</div>
-		<div v-else>加载中。。。</div>
 	</section>
 </template>
 

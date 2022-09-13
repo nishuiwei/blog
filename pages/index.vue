@@ -2,9 +2,21 @@
 	<NuxtLayout>
 		<template #header>
 			<div
-				class="h-96 rounded-lg bg-him-100 dark:bg-dim-50 flex items-center justify-center"
+				class="xs:flex hidden h-96 rounded-lg items-center justify-center backdrop-saturate-150 backdrop-blur overflow-hidden relative"
 			>
-				<p>正在维护中...</p>
+				<!-- <p>正在维护中...</p> -->
+				<img
+					src="https://images.unsplash.com/photo-1610462257803-064c1273c681?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
+					alt=""
+					class="blur-md object-cover absolute"
+				/>
+				<div class="absolute h-full">
+					<img
+						src="https://images.unsplash.com/photo-1610462257803-064c1273c681?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
+						alt=""
+						class="h-full"
+					/>
+				</div>
 			</div>
 		</template>
 		<Post :homePosts="homePosts" />

@@ -2,7 +2,7 @@
 	<div :class="[{ dark: darkMode }, defaultTransition]">
 		<div class="bg-white dark:bg-dim-100 font-sans select-none">
 			<div
-				class="grid grid-cols-12 mx-auto sm:px-6 lg:gap-4 gap-0 lg:max-w-7xl lg:px-8 md:px-4 px-2 xs:px-8"
+				class="grid grid-cols-12 mx-auto sm:px-6 lg:gap-8 gap-6 lg:max-w-7xl lg:px-6 md:px-4 px-2 xs:px-8"
 			>
 				<header
 					class="text-center text-him-100 dark:text-dim-200 text-base font-extralight pb-4 border-b col-span-12 border-him-300 dark:border-dim-400 sticky top-0 flex justify-between items-center backdrop-saturate-150 backdrop-blur z-30 pt-2"

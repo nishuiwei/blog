@@ -11,6 +11,7 @@
 		</template>
 		<div v-if="!loading">
 			<post-details :post="post" />
+			<comments></comments>
 		</div>
 		<div v-else>加载中。。。</div>
 	</NuxtLayout>

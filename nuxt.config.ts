@@ -2,7 +2,10 @@ import { defineNuxtConfig } from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-	modules: ['@nuxt/image-edge', '@nuxtjs/tailwindcss'],
+	modules: ['@nuxt/image-edge', '@nuxtjs/tailwindcss', '~/modules/sitemap'],
+	sitemap: {
+		hostname: 'https://weihuijieonline.com',
+	},
 	app: {
 		head: {
 			title: 'hi - blog',
@@ -28,14 +31,13 @@ export default defineNuxtConfig({
 					content: 'D3Z4duAsa3',
 				},
 			],
-			link: [
-				// {
-				// 	rel: 'stylesheet',
-				// 	href: './style/theme.scss',
-				// },
-			],
 		},
 	},
+	css: ['~/assets/main.css'],
+	// pageTransition: {
+	// 	name: 'my-page',
+	// 	mode: 'out-in',
+	// },
 	// nuxt-image config
 	image: {
 		cloudinary: {
@@ -49,6 +51,11 @@ export default defineNuxtConfig({
 					quality: '60',
 				},
 			},
+		},
+	},
+	router: {
+		scrollBehavior: () => {
+			return { x: 0, y: 0 }
 		},
 	},
 })

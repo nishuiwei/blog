@@ -4,7 +4,7 @@
 		"build": "nuxt build",
 		"dev": "nuxt dev --port 4000",
 		"generate": "nuxt generate",
-		"preview": "nuxt preview"
+		"preview": "nuxt preview --port 4000"
 	},
 	"devDependencies": {
 		"@nuxt/image-edge": "^1.0.0-27657146.da85542",
@@ -21,6 +21,7 @@
 		"@bytemd/vue-next": "^1.17.2",
 		"@prisma/client": "4.2.1",
 		"prisma": "^4.2.1",
-		"sass": "^1.54.5"
+		"sass": "^1.54.5",
+		"sitemap": "^7.1.1"
 	}
 }

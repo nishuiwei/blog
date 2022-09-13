@@ -8,7 +8,7 @@
 			<transition
 				appear
 				enter-active-class="transition duration-700 ease-in-out"
-				enter-from-class="blur-lg opacity-75"
+				enter-from-class="blur-lg opacity-95"
 				enter-to-class="blur-none opacity-100"
 			>
 				<nuxt-link
@@ -17,12 +17,15 @@
 					class="w-full h-full"
 				>
 					<nuxt-img
-						v-if="props.post?.mediaFile"
+						v-show="props.post?.mediaFile"
 						:src="props.post?.mediaFile"
 						:alt="props.post?.title"
 						:title="props.post?.title"
+						width="440"
+						height="308"
 						class="hover:scale-105 transition duration-500 ease-in-out h-full object-cover w-full rounded-sm"
 						format="webp"
+						:modifiers="{ animated: true }"
 					/>
 				</nuxt-link>
 			</transition>
@@ -80,7 +83,7 @@
 					class="text-him-200 dark:text-dim-300 text-xs font-thin"
 					:title="props.post?.createdAt"
 				>
-					{{ props.post?.createdAt }}
+					{{ formatTime(props.post?.createdAt) }}
 				</time>
 			</div>
 		</div>
@@ -89,7 +92,7 @@
 
 <script setup>
 const { defaultHoverText, defaultHoverBorder, defaultTransition } = useStyle()
-
+const { formatTime } = useFormat()
 const props = defineProps({
 	post: {
 		type: Object,

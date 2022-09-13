@@ -1,5 +1,6 @@
 generator client {
   provider = "prisma-client-js"
+  binaryTargets = ["rhel-openssl-1.1.x"]
 }
 
 datasource db {
@@ -14,11 +15,41 @@ model articles {
   article_image String
   article_label String @db.ObjectId
   article_type  String @db.ObjectId
+ 
   content       String
   createdAt     String
   title         String
   updatedAt     String
   user          String @db.ObjectId
+  author users @relation(fields: [user], references: [id])
+  type articletypes @relation(fields: [article_type], references: [id])
+}
+
+model articletypes {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  v           Int      @map("__v")
+  articles    String[] @db.ObjectId
+  articles_data articles[]
+  createdAt   DateTime @db.Date
+  description String
+  label       String
+  updatedAt   DateTime @db.Date
+}
+
+model users {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  v          Int?     @map("__v")
+  articles   String[] @db.ObjectId
+  articles_data articles[]
+  createdAt  String?
+  email      String?  @unique(map: "email_1")
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  likes      Json?
+  password   String?
+  profilePic String?
+  role       String?  @db.ObjectId
+  updatedAt  String?
+  username   String?  @unique(map: "username_1")
 }
 
 model articletags {
@@ -31,15 +62,7 @@ model articletags {
   updatedAt   DateTime @db.Date
 }
 
-model articletypes {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  v           Int      @map("__v")
-  articles    String[] @db.ObjectId
-  createdAt   DateTime @db.Date
-  description String
-  label       String
-  updatedAt   DateTime @db.Date
-}
+
 
 model menus {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
@@ -96,17 +119,3 @@ model tracks {
   user      Json?
 }
 
-model users {
-  id         String   @id @default(auto()) @map("_id") @db.ObjectId
-  v          Int?     @map("__v")
-  articles   String[] @db.ObjectId
-  createdAt  String?
-  email      String?  @unique(map: "email_1")
-  /// Could not determine type: the field only had null or empty values in the sample set.
-  likes      Json?
-  password   String?
-  profilePic String?
-  role       String?  @db.ObjectId
-  updatedAt  String?
-  username   String?  @unique(map: "username_1")
-}

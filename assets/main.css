@@ -1,0 +1,10 @@
+.page-enter-active,
+.page-leave-active {
+	transform: all 3s;
+}
+
+.page-enter,
+.page-leave-to {
+	opacity: 0.85;
+	filter: blur(8px);
+}

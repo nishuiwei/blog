@@ -1,11 +1,25 @@
 <template>
-	<nuxt-page />
+	<div :class="defaultTransition">
+		<transition name="home">
+			<nuxt-page />
+		</transition>
+	</div>
 </template>
 
-<script setup></script>
+<script setup>
+const { defaultTransition } = useStyle()
+</script>
 
 <style>
 * {
 	scroll-behavior: smooth;
+}
+.home-enter-active,
+.home-leave-active {
+	transition: opacity 0.5s;
+}
+.home-enter,
+.home-leave-active {
+	opacity: 0;
 }
 </style>
