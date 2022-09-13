@@ -17,6 +17,7 @@
 					class="w-full h-full"
 				>
 					<nuxt-img
+						provider="cloudinary"
 						v-show="props.post?.mediaFile"
 						:src="props.post?.mediaFile"
 						:alt="props.post?.title"
@@ -25,7 +26,6 @@
 						height="308"
 						class="hover:scale-105 transition duration-500 ease-in-out h-full object-cover w-full rounded-sm"
 						format="webp"
-						:modifiers="{ animated: true }"
 					/>
 				</nuxt-link>
 			</transition>
@@ -59,6 +59,7 @@
 			<div class="w-11 h-11 rounded-full border-2 border-dim-600">
 				<nuxt-img
 					v-if="props.post?.author?.profilePic"
+					provider="cloudinary"
 					:src="props.post?.author?.profilePic"
 					:alt="props.post?.author?.username"
 					:title="props.post?.author?.username"

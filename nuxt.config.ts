@@ -34,11 +34,12 @@ export default defineNuxtConfig({
 		},
 	},
 	css: ['~/assets/main.css'],
-	// pageTransition: {
-	// 	name: 'my-page',
-	// 	mode: 'out-in',
-	// },
-	// nuxt-image config
+	runtimeConfig: {
+		// Cloudinary
+		cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
+		cloudinaryApiKey: process.env.CLOUDINARY_API_KEY,
+		cloudinaryApiSecret: process.env.CLOUDINARY_API_SECRET,
+	},
 	image: {
 		cloudinary: {
 			baseURL: 'https://res.cloudinary.com/dnc0d5evo/image/upload/',
@@ -49,6 +50,7 @@ export default defineNuxtConfig({
 					format: 'webp',
 					fit: 'cover',
 					quality: '60',
+					animated: true,
 				},
 			},
 		},

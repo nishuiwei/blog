@@ -5,15 +5,22 @@
 				class="xs:flex hidden h-96 rounded-lg items-center justify-center backdrop-saturate-150 backdrop-blur overflow-hidden relative"
 			>
 				<!-- <p>正在维护中...</p> -->
-				<img
+				<!-- <img
 					src="https://images.unsplash.com/photo-1610462257803-064c1273c681?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
 					alt=""
 					class="blur-md object-cover absolute"
+				/> -->
+				<nuxt-img
+					provider="cloudinary"
+					src="v1660662530/cld-sample-2.jpg"
+					class="blur-md object-cover absolute w-full"
+					format="webp"
 				/>
 				<div class="absolute h-full">
-					<img
-						src="https://images.unsplash.com/photo-1610462257803-064c1273c681?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
-						alt=""
+					<nuxt-img
+						provider="cloudinary"
+						src="v1660662530/cld-sample-2.jpg"
+						format="webp"
 						class="h-full"
 					/>
 				</div>
