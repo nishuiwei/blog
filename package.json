@@ -19,10 +19,10 @@
 		"@bytemd/plugin-highlight-ssr": "^1.17.2",
 		"@bytemd/plugin-medium-zoom": "^1.17.2",
 		"@bytemd/vue-next": "^1.17.2",
-		"@prisma/client": "4.2.1",
+		"@prisma/client": "4.3.1",
 		"cloudinary": "^1.31.0",
 		"formidable": "^2.0.1",
-		"prisma": "^4.2.1",
+		"prisma": "^4.3.1",
 		"sass": "^1.54.5",
 		"sitemap": "^7.1.1"
 	}

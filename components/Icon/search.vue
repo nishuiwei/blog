@@ -5,7 +5,7 @@
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
 		stroke="currentColor"
-		class="w-6 h-6"
+		:class="classes"
 	>
 		<path
 			stroke-linecap="round"
@@ -14,3 +14,18 @@
 		/>
 	</svg>
 </template>
+
+<script setup>
+const props = defineProps({
+	w: {
+		type: Number,
+		default: 6,
+	},
+	h: {
+		type: Number,
+		default: 6,
+	},
+})
+
+const classes = computed(() => `w-${props.w} h-${props.h}`)
+</script>

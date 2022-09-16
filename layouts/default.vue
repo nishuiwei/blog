@@ -23,8 +23,9 @@
 						<i
 							class="cursor-pointer ml-3"
 							:class="[defaultTransition, defaultHoverText]"
+							@click="handleSearchClick"
 						>
-							<!-- <icon-search title="搜索" /> -->
+							<icon-search title="搜索" />
 						</i>
 					</div>
 					<div class="text-center text-4xl font-bold">hi - blog</div>
@@ -53,19 +54,44 @@
 				</div>
 			</div>
 		</div>
+		<template v-if="can_search">
+			<div
+				class="absolute top-0 bottom-0 left-0 right-0 block backdrop-blur-[2px] animate-fadein z-0 bg-gradient-to-br from-[rgba(0,0,0,0.2)] to-[rgba(0,0,0,0.1)]"
+				@click.stop="setSearchMark(false)"
+			>
+				<div
+					class="h-screen w-screen pt-20 antialiased z-100 relative ghost-display"
+				>
+					<transition
+						appear
+						enter-active-class="transition-transform duration-500 ease-in-out"
+						enter-from-class="translate-y-5"
+						enter-to-class="translate-y-0"
+					>
+						<search-input />
+					</transition>
+				</div>
+			</div>
+		</template>
 	</div>
 </template>
 
 <script setup>
 const { defaultTransition, defaultHoverText } = useStyle()
 const { useDarkMode, getDarkMode, setDarkMode } = useTheme()
-// console.log(process)
 const { useAdvicon } = useAdv()
+const { useSearchMark, setSearchMark } = useSearch()
+
+const can_search = useSearchMark()
 const advicon = useAdvicon()
 const darkMode = useDarkMode()
 onMounted(() => {
 	getDarkMode()
 })
+
+const handleSearchClick = () => {
+	setSearchMark(true)
+}
 </script>
 
 <style scoped lang="scss"></style>

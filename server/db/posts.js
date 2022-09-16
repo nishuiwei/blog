@@ -1,8 +1,25 @@
 import { prisma } from '.'
 
-export const getPosts = (params = {}) => {
+export const getPosts = (params = {}, keyword = '') => {
 	return prisma.articles.findMany({
 		...params,
+		where: {
+			...params.where,
+			OR: [
+				{
+					content: {
+						contains: keyword || '',
+						mode: 'insensitive',
+					},
+				},
+				{
+					title: {
+						contains: keyword || '',
+						mode: 'insensitive',
+					},
+				},
+			],
+		},
 	})
 }
 

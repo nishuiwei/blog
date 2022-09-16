@@ -1,5 +1,5 @@
 <template>
-	<div :class="defaultTransition">
+	<div :class="defaultTransition" class="overflow-x-hidden">
 		<transition name="home">
 			<nuxt-page />
 		</transition>

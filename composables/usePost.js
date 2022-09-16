@@ -1,9 +1,10 @@
 export default () => {
-	const getHomePosts = () => {
+	const getHomePosts = (params = {}) => {
 		return new Promise(async (resolve, reject) => {
 			try {
 				const response = await useFetchApi('/api/posts', {
 					method: 'GET',
+					params,
 				})
 				resolve(response)
 			} catch (error) {

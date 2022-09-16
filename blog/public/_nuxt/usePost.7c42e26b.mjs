@@ -1,0 +1,1 @@
+const c=(n,t={})=>$fetch(n,{...t,headers:{...t.headers}}),a=()=>({getHomePosts:(s={})=>new Promise(async(r,o)=>{try{const e=await c("/api/posts",{method:"GET",params:s});r(e)}catch(e){o(e)}}),getPostById:s=>new Promise(async(r,o)=>{try{const e=await c(`/api/posts/${s}`);r(e)}catch(e){o(e)}})});export{a as u};

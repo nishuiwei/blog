@@ -15,6 +15,8 @@
 					src="v1660662530/cld-sample-2.jpg"
 					class="blur-md object-cover absolute w-full"
 					format="webp"
+					alt="首页背景"
+					title="首页背景"
 				/>
 				<div class="absolute h-full">
 					<nuxt-img
@@ -22,6 +24,8 @@
 						src="v1660662530/cld-sample-2.jpg"
 						format="webp"
 						class="h-full"
+						alt="首页背景"
+						title="首页背景"
 					/>
 				</div>
 			</div>

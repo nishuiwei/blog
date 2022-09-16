@@ -1,0 +1,113 @@
+{
+  "node_modules/nuxt/dist/app/entry.mjs": {
+    "file": "_nuxt/entry.16da67a4.mjs",
+    "src": "node_modules/nuxt/dist/app/entry.mjs",
+    "isEntry": true,
+    "dynamicImports": [
+      "layouts/default.vue",
+      "pages/index.vue",
+      "pages/post/[id].vue",
+      "virtual:nuxt:/Users/weihuijie/Desktop/blog_refactor/.nuxt/error-component.mjs"
+    ],
+    "css": [
+      "_nuxt/entry.8f53bbea.css"
+    ]
+  },
+  "virtual:nuxt:/Users/weihuijie/Desktop/blog_refactor/.nuxt/error-component.mjs": {
+    "file": "_nuxt/error-component.eb744ffe.mjs",
+    "src": "virtual:nuxt:/Users/weihuijie/Desktop/blog_refactor/.nuxt/error-component.mjs",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ],
+    "dynamicImports": [
+      "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
+      "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
+    ]
+  },
+  "pages/index.vue": {
+    "file": "_nuxt/index.e4ade25d.mjs",
+    "src": "pages/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs",
+      "_useFormat.34dca4b1.mjs",
+      "_usePost.7c42e26b.mjs"
+    ]
+  },
+  "_usePost.7c42e26b.mjs": {
+    "file": "_nuxt/usePost.7c42e26b.mjs"
+  },
+  "_useFormat.34dca4b1.mjs": {
+    "file": "_nuxt/useFormat.34dca4b1.mjs"
+  },
+  "pages/post/[id].vue": {
+    "file": "_nuxt/_id_.014e4c83.mjs",
+    "src": "pages/post/[id].vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs",
+      "_useFormat.34dca4b1.mjs",
+      "_useAdv.65625e1b.mjs",
+      "_usePost.7c42e26b.mjs"
+    ],
+    "dynamicImports": [
+      "node_modules/medium-zoom/dist/medium-zoom.esm.js"
+    ]
+  },
+  "_useAdv.65625e1b.mjs": {
+    "file": "_nuxt/useAdv.65625e1b.mjs",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "layouts/default.vue": {
+    "file": "_nuxt/default.d66ae787.mjs",
+    "src": "layouts/default.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs",
+      "_usePost.7c42e26b.mjs",
+      "_useAdv.65625e1b.mjs"
+    ]
+  },
+  "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue": {
+    "file": "_nuxt/error-404.f6fbdb34.mjs",
+    "src": "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ],
+    "css": [
+      "_nuxt/error-404.7729cee9.css"
+    ]
+  },
+  "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue": {
+    "file": "_nuxt/error-500.8749c02d.mjs",
+    "src": "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ],
+    "css": [
+      "_nuxt/error-500.08851880.css"
+    ]
+  },
+  "node_modules/medium-zoom/dist/medium-zoom.esm.js": {
+    "file": "_nuxt/medium-zoom.esm.f2927be0.mjs",
+    "src": "node_modules/medium-zoom/dist/medium-zoom.esm.js",
+    "isDynamicEntry": true
+  },
+  "node_modules/@nuxt/ui-templates/dist/templates/error-500.css": {
+    "file": "_nuxt/error-500.08851880.css",
+    "src": "node_modules/@nuxt/ui-templates/dist/templates/error-500.css"
+  },
+  "node_modules/@nuxt/ui-templates/dist/templates/error-404.css": {
+    "file": "_nuxt/error-404.7729cee9.css",
+    "src": "node_modules/@nuxt/ui-templates/dist/templates/error-404.css"
+  },
+  "node_modules/nuxt/dist/app/entry.css": {
+    "file": "_nuxt/entry.8f53bbea.css",
+    "src": "node_modules/nuxt/dist/app/entry.css"
+  }
+}

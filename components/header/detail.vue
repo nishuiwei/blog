@@ -8,7 +8,8 @@
 				enter-to-class="blur-none opacity-100"
 			>
 				<nuxt-img
-					v-if="props.mediaFile"
+					provider="cloudinary"
+					format="webp"
 					:src="props.mediaFile"
 					:alt="props.title"
 					:title="props.title"
@@ -36,12 +37,13 @@
 				<div class="flex my-3 items-center">
 					<div class="w-11 h-11 rounded-full border-2 border-dim-600">
 						<nuxt-img
+							provider="cloudinary"
+							format="webp"
 							v-if="props.author?.profilePic"
 							:src="props.author?.profilePic"
 							:alt="props.author?.username"
 							:title="props.author?.username"
 							:aria-label="props.author?.username"
-							format="webp"
 							class="rounded-full w-full h-full object-cover"
 						/>
 					</div>
@@ -74,12 +76,13 @@
 			<div class="flex my-3 items-center">
 				<div class="w-11 h-11 rounded-full border-2 border-dim-600">
 					<nuxt-img
+						provider="cloudinary"
+						format="webp"
 						v-if="props.author?.profilePic"
 						:src="props.author?.profilePic"
 						:alt="props.author?.username"
 						:title="props.author?.username"
 						:aria-label="props.author?.username"
-						format="webp"
 						class="rounded-full w-full h-full object-cover"
 					/>
 				</div>
@@ -111,7 +114,8 @@
 			enter-to-class="blur-none opacity-100"
 		>
 			<nuxt-img
-				v-if="props.mediaFile"
+				provider="cloudinary"
+				format="webp"
 				:src="props.mediaFile"
 				:alt="props.title"
 				:title="props.title"
