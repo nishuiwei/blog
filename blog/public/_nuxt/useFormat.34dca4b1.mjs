@@ -1,1 +1,0 @@
-const i=()=>({formatTime:u=>{const s=new Date().getTime(),a=new Date(u).getTime(),t=(s-a)/1e3,e=Math.floor(t/86400),o=Math.floor(t/3600)-24*e,n=Math.floor(t%3600/60),r=Math.floor(t%60);if(e)return`${e} \u5929\u524D`;if(o)return`${o} \u5C0F\u65F6\u524D`;if(n)return`${n} \u5206\u949F\u524D`;if(r)return`${r} \u79D2\u524D`}});export{i as u};

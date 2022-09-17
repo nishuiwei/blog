@@ -1,5 +1,6 @@
 <template>
 	<div :class="defaultTransition" class="overflow-x-hidden">
+		<NuxtLoadingIndicator />
 		<transition name="home">
 			<nuxt-page />
 		</transition>
