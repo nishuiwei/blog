@@ -4,19 +4,14 @@
 			<div
 				class="xs:flex hidden h-96 rounded-lg items-center justify-center backdrop-saturate-150 backdrop-blur overflow-hidden relative"
 			>
-				<!-- <p>正在维护中...</p> -->
-				<!-- <img
-					src="https://images.unsplash.com/photo-1610462257803-064c1273c681?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
-					alt=""
-					class="blur-md object-cover absolute"
-				/> -->
 				<nuxt-img
 					provider="cloudinary"
 					src="v1660662530/cld-sample-2.jpg"
-					class="blur-md object-cover absolute w-full"
+					class="blur-md absolute w-full h-full object-none"
 					format="webp"
 					alt="首页背景"
 					title="首页背景"
+					placeholder="/image/placeholder/img-placeholder-sm.jpg"
 				/>
 				<div class="absolute h-full">
 					<nuxt-img
@@ -26,11 +21,12 @@
 						class="h-full"
 						alt="首页背景"
 						title="首页背景"
+						placeholder="/image/placeholder/img-placeholder-sm.jpg"
 					/>
 				</div>
 			</div>
 		</template>
-		<Post :homePosts="homePosts" />
+		<Post :homePosts="homePosts" :homePage="homePage" />
 	</NuxtLayout>
 </template>
 
@@ -38,13 +34,14 @@
 const { getHomePosts } = usePost()
 
 const homePosts = ref([])
+const homePage = ref({})
 const loading = ref(false)
 onBeforeMount(async () => {
 	loading.value = true
 	try {
-		const { data } = await getHomePosts()
+		const { data, page } = await getHomePosts()
 		homePosts.value = data
-		console.log(data)
+		homePage.value = page
 	} catch (error) {
 		console.log(error)
 	} finally {

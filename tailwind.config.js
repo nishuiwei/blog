@@ -30,6 +30,7 @@ module.exports = {
 					300: '#eff1f3', // 卡片边框颜色
 					400: '#e50b4f', // 高亮
 					500: '#fafafa',
+					600: '#e50b59',
 				},
 			},
 			typography: (theme) => ({

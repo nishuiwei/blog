@@ -9,20 +9,13 @@
 			>
 				Posts
 			</h1>
-			<template v-for="item in props.post">
+			<template v-for="item in props.post" :key="item.id">
 				<nuxt-link :to="`/post/${item.id}`">
-					<div
-						class="py-3 -mx-4 sm:-mx-7 px-4 sm:px-7 cursor-pointer hover:bg-neutral-100"
-					>
-						<h2 class="text-base font-medium leading-tight text-neutral-800">
-							{{ item.title }}
-						</h2>
-						<p
-							class="text-neutral-400 leading-normal text-sm mt-0 mb-0 truncate"
-						>
-							{{ item.abstract }}
-						</p>
-					</div>
+					<search-panel-item
+						:title="item.title"
+						:abstract="item.abstract"
+						v-model:keyowrd="props.keyword"
+					/>
 				</nuxt-link>
 			</template>
 		</div>

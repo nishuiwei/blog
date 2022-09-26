@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="flex items-center justify-between p-2 h-100 text-him-100 border-b last:border-b-0 font-semibold text-base dark:text-dim-200"
+		class="flex items-center justify-between p-2 h-100 text-him-100 dark:text-dim-200 border-b last:border-b-0 font-semibold text-base"
 		:class="[defaultHoverText, twitterBorderColor]"
 	>
 		<h6 :class="defaultTransition">

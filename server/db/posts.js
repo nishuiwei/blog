@@ -23,6 +23,28 @@ export const getPosts = (params = {}, keyword = '') => {
 	})
 }
 
+export const getPostCount = (params = {}, keyword = '') => {
+	return prisma.articles.count({
+		where: {
+			...params.where,
+			OR: [
+				{
+					content: {
+						contains: keyword || '',
+						mode: 'insensitive',
+					},
+				},
+				{
+					title: {
+						contains: keyword || '',
+						mode: 'insensitive',
+					},
+				},
+			],
+		},
+	})
+}
+
 export const getPostById = (postId, params = {}) => {
 	return prisma.articles.findUnique({
 		...params,

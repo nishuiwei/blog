@@ -9,6 +9,13 @@
 				:type="post.type"
 			/>
 		</template>
+		<template #new_article>
+			<sidebar-preview-card title="最新文章">
+				<template v-for="article in article_top">
+					<sidebar-story :post="article" />
+				</template>
+			</sidebar-preview-card>
+		</template>
 		<div v-if="!loading">
 			<post-details :post="post" />
 			<comments></comments>
@@ -39,7 +46,19 @@ const getPost = async () => {
 	}
 }
 
-onBeforeMount(() => {
+const { getPostTop } = usePost()
+const article_top = ref([])
+
+onBeforeMount(async () => {
 	getPost()
+	try {
+		const { data } = await getPostTop()
+		article_top.value = data
+		console.log(data)
+	} catch (error) {
+		console.log(error)
+	} finally {
+		// loading.value = false
+	}
 })
 </script>

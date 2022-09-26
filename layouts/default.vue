@@ -45,7 +45,11 @@
 					class="hidden sm:col-span-4 sm:block lg:col-span-3 w-full"
 					:class="defaultTransition"
 				>
-					<sidebar-right />
+					<sidebar-right>
+						<template #new_article>
+							<slot name="new_article" />
+						</template>
+					</sidebar-right>
 				</div>
 				<div
 					class="text-center text-him-100 dark:text-dim-200 text-base font-extralight pt-4 border-t col-span-12 border-him-300 dark:border-dim-400"
@@ -56,7 +60,7 @@
 		</div>
 		<template v-if="can_search">
 			<div
-				class="absolute top-0 bottom-0 left-0 right-0 block backdrop-blur-[2px] animate-fadein z-0 bg-gradient-to-br from-[rgba(0,0,0,0.2)] to-[rgba(0,0,0,0.1)]"
+				class="absolute top-0 bottom-0 left-0 right-0 block backdrop-blur-[2px] animate-fadein z-40 bg-gradient-to-br from-[rgba(0,0,0,0.2)] to-[rgba(0,0,0,0.1)]"
 				@click.stop="setSearchMark(false)"
 			>
 				<div

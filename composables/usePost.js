@@ -12,6 +12,16 @@ export default () => {
 			}
 		})
 	}
+	const getPostTop = () => {
+		return new Promise(async (resolve, reject) => {
+			try {
+				const response = await useFetchApi(`/api/posts/top`)
+				resolve(response)
+			} catch (error) {
+				reject(error)
+			}
+		})
+	}
 	const getPostById = (postId) => {
 		return new Promise(async (resolve, reject) => {
 			try {
@@ -26,5 +36,6 @@ export default () => {
 	return {
 		getHomePosts,
 		getPostById,
+		getPostTop,
 	}
 }

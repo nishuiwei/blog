@@ -1,5 +1,4 @@
 import { defineNuxtConfig } from 'nuxt'
-
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
 	modules: ['@nuxt/image-edge', '@nuxtjs/tailwindcss', '~/modules/sitemap'],
@@ -29,6 +28,13 @@ export default defineNuxtConfig({
 				{
 					name: 'sogou_site_verification',
 					content: 'D3Z4duAsa3',
+				},
+			],
+			script: [
+				{
+					src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5041052854428027',
+					async: true,
+					crossOrigin: 'anonymous',
 				},
 			],
 		},

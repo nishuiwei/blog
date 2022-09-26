@@ -26,6 +26,7 @@
 						height="308"
 						class="hover:scale-105 transition duration-500 ease-in-out h-full object-cover w-full rounded-sm"
 						format="webp"
+						placeholder="/image/placeholder/img-placeholder-sm.jpg"
 					/>
 				</nuxt-link>
 			</transition>
@@ -66,6 +67,7 @@
 					:aria-label="props.post?.author?.username"
 					format="webp"
 					class="rounded-full w-full h-full"
+					placeholder="/image/placeholder/img-placeholder-sm.jpg"
 				/>
 			</div>
 			<!-- 名字，发布时间 -->
@@ -84,7 +86,7 @@
 					class="text-him-200 dark:text-dim-300 text-xs font-thin"
 					:title="props.post?.createdAt"
 				>
-					{{ formatTime(props.post?.createdAt) }}
+					{{ props.post?.createdAt }}
 				</time>
 			</div>
 		</div>
@@ -93,7 +95,6 @@
 
 <script setup>
 const { defaultHoverText, defaultHoverBorder, defaultTransition } = useStyle()
-const { formatTime } = useFormat()
 const props = defineProps({
 	post: {
 		type: Object,

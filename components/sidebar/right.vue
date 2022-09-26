@@ -13,6 +13,13 @@
 				<sidebar-preview-card-item v-bind="categroy" />
 			</template>
 		</sidebar-preview-card>
+
+		<!-- <sidebar-preview-card title="文章主题">
+			<template v-for="categroy in categroy_map">
+				<sidebar-preview-card-item v-bind="categroy" />
+			</template>
+		</sidebar-preview-card> -->
+		<slot name="new_article" />
 	</aside>
 </template>
 
