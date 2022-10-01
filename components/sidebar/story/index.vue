@@ -1,8 +1,9 @@
 <template>
 	<article class="mb-4 sidebar__story last:mb-0">
 		<h6
-			class="sidebar__story-title text-sm text-him-100 dark:text-dim-200 font-semibold mr-3"
+			class="sidebar__story-title text-sm text-him-100 dark:text-dim-200 font-semibold mr-3 w-5/12 truncate"
 			:class="[defaultHoverText, defaultTransition]"
+			:title="props?.post?.title"
 		>
 			<nuxt-link :to="`/post/${props?.post?.id}`">
 				<font style="vertical-align: inherit">

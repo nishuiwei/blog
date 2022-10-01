@@ -49,6 +49,6 @@ getPost()
 
 onMounted(async () => {
 	const { data: top } = await getPostTop()
-	article_top.value = top.value.data
+	article_top.value = top
 })
 </script>
