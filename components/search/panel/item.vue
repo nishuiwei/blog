@@ -28,11 +28,10 @@ const props = defineProps({
 })
 
 const titleHighComp = computed(() => {
-	console.log(props.keyword)
-	return props.title.replaceAll(props.keyword, '123') || ''
+	return props.title.replaceAll(props.keyword, props.keyword) || ''
 })
 
 const abstractHighComp = computed(() => {
-	return props.abstract.replaceAll(props.keyword, '123') || ''
+	return props.abstract.replaceAll(props.keyword, props.keyword) || ''
 })
 </script>

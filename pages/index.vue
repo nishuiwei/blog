@@ -15,6 +15,7 @@
 				/>
 				<div class="absolute h-full">
 					<nuxt-img
+						loading="lazy"
 						provider="cloudinary"
 						src="v1660662530/cld-sample-2.jpg"
 						format="webp"
@@ -26,7 +27,11 @@
 				</div>
 			</div>
 		</template>
-		<Post :homePosts="homePosts" :homePage="homePage" />
+		<Post
+			:homePosts="homePosts"
+			:homePage="homePage"
+			@prevClick="handlePrevClick"
+		/>
 	</NuxtLayout>
 </template>
 
@@ -36,16 +41,23 @@ const { getHomePosts } = usePost()
 const homePosts = ref([])
 const homePage = ref({})
 const loading = ref(false)
-onBeforeMount(async () => {
-	loading.value = true
+const getPosts = async (offset = 1) => {
 	try {
-		const { data, page } = await getHomePosts()
-		homePosts.value = data
-		homePage.value = page
+		const { data } = await getHomePosts({ offset })
+		homePosts.value = homePosts.value.concat(data.value.data)
+		homePage.value = data.value.page
 	} catch (error) {
 		console.log(error)
 	} finally {
 		loading.value = false
 	}
-})
+}
+getPosts()
+const handlePrevClick = () => {
+	console.log('下一页')
+	const offset = ~~homePage.value.curr_page + 1
+	getPosts(offset)
+}
+
+// })
 </script>

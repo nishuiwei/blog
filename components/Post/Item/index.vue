@@ -1,5 +1,5 @@
 <template>
-	<article class="col-span-12 xs:col-span-6 text-amber-500">
+	<article class="text-amber-500" :class="props.classes">
 		<!-- 背景图片 -->
 		<div
 			class="flex w-full rounded-lg items-center justify-center text-5xl cursor-pointer border border-him-300 dark:border-dim-400 overflow-hidden dark:bg-gray-900 bg-neutral-300"
@@ -7,9 +7,10 @@
 			<!-- 72 X 72 -->
 			<transition
 				appear
-				enter-active-class="transition duration-700 ease-in-out"
+				enter-active-class="transition duration-1000 ease-in-out"
 				enter-from-class="blur-lg opacity-95"
 				enter-to-class="blur-none opacity-100"
+				v-if="props.post?.mediaFile"
 			>
 				<nuxt-link
 					:to="`/post/${props.post?.id}`"
@@ -17,9 +18,9 @@
 					class="w-full h-full"
 				>
 					<nuxt-img
+						loading="lazy"
 						provider="cloudinary"
-						v-show="props.post?.mediaFile"
-						:src="props.post?.mediaFile"
+						:src="props.post?.mediaFile || 'v1660662530/cld-sample-2.jpg'"
 						:alt="props.post?.title"
 						:title="props.post?.title"
 						width="440"
@@ -32,7 +33,7 @@
 			</transition>
 		</div>
 		<!-- 按钮 -->
-		<div class="flex items-center pt-5 gap-3">
+		<div class="flex items-center pt-5 gap-3" v-if="props.post?.type?.label">
 			<nuxt-link
 				:to="`/post/${props.post?.id}`"
 				class="border bg-transparent rounded-md text-xs font-semibold px-2 tracking-widest py-0.5 text-him-100 dark:text-dim-200"
@@ -59,9 +60,12 @@
 		<div class="flex my-3 items-center">
 			<div class="w-11 h-11 rounded-full border-2 border-dim-600">
 				<nuxt-img
+					loading="lazy"
 					v-if="props.post?.author?.profilePic"
 					provider="cloudinary"
-					:src="props.post?.author?.profilePic"
+					:src="
+						props.post?.author?.profilePic || 'v1660662530/cld-sample-2.jpg'
+					"
 					:alt="props.post?.author?.username"
 					:title="props.post?.author?.username"
 					:aria-label="props.post?.author?.username"
@@ -103,6 +107,10 @@ const props = defineProps({
 	index: {
 		type: Number,
 		default: 0,
+	},
+	classes: {
+		type: String,
+		default: 'col-span-12 xs:col-span-6',
 	},
 })
 </script>

@@ -34,7 +34,6 @@ module.exports = {
 				},
 			},
 			typography: (theme) => ({
-				// console.log(theme)
 				DEFAULT: {
 					h1: {
 						color: theme('colors.gray.800'),

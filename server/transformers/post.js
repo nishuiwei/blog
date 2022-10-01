@@ -7,8 +7,8 @@ export const postTransformer = (post, isDetail = false) => {
 		abstract: post.abstract,
 		title: post.title,
 		content: isDetail ? post.content : undefined,
-		mediaFile: post.article_image,
-		createdAt: post.createdAt.split(' ')[0],
+		mediaFile: post?.article_image,
+		createdAt: post?.createdAt?.split(' ')[0],
 		type: !!post.type ? typeTransformer(post.type) : null,
 		author: !!post.author ? userTransformer(post.author) : null,
 	}

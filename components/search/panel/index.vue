@@ -9,11 +9,11 @@
 			>
 				Posts
 			</h1>
-			<template v-for="item in props.post" :key="item.id">
-				<nuxt-link :to="`/post/${item.id}`">
+			<template v-for="item in props?.post" :key="item?.id">
+				<nuxt-link :to="`/post/${item?.id}`">
 					<search-panel-item
-						:title="item.title"
-						:abstract="item.abstract"
+						:title="item?.title"
+						:abstract="item?.abstract"
 						v-model:keyowrd="props.keyword"
 					/>
 				</nuxt-link>

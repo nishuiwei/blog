@@ -6,7 +6,8 @@ export default defineEventHandler(async (event) => {
 	const count = await getPostCount({}, keyword)
 	const offset = query?.offset || 1
 	const size = query?.size || 10
-	const page = Math.ceil((offset * size) / count)
+	const page =
+		count >= offset * size ? Math.ceil(count / (offset * size)) : offset
 	const posts = await getPosts(
 		{
 			skip: ~~(offset - 1) * size,
@@ -26,10 +27,10 @@ export default defineEventHandler(async (event) => {
 	return {
 		data: posts.map(postTransformer),
 		page: {
-			curr_page: offset,
-			page_size: size,
-			page_total: page,
-			total_count: count,
+			curr_page: ~~offset,
+			page_size: ~~size,
+			page_total: ~~page,
+			total_count: ~~count,
 		},
 	}
 })

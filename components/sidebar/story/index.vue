@@ -4,9 +4,9 @@
 			class="sidebar__story-title text-sm text-him-100 dark:text-dim-200 font-semibold mr-3"
 			:class="[defaultHoverText, defaultTransition]"
 		>
-			<nuxt-link :to="`/post/${props.post.id}`">
+			<nuxt-link :to="`/post/${props?.post?.id}`">
 				<font style="vertical-align: inherit">
-					{{ props.post.title }}
+					{{ props?.post?.title }}
 				</font>
 			</nuxt-link>
 		</h6>
@@ -22,8 +22,9 @@
 				class="rounded-md"
 			>
 				<nuxt-img
+					loading="lazy"
 					provider="cloudinary"
-					:src="props.post?.mediaFile"
+					:src="props.post?.mediaFile || 'v1660662530/cld-sample-2.jpg'"
 					:alt="props.post?.title"
 					:title="props.post?.title"
 					class="w-16 h-16 rounded-md object-cover"
