@@ -29,6 +29,10 @@ export default defineNuxtConfig({
 					name: 'sogou_site_verification',
 					content: 'D3Z4duAsa3',
 				},
+				{
+					name: 'baidu_union_verify',
+					content: '0f5b448e0aaced892bd27859f3c312a8',
+				},
 			],
 			script: [
 				{
