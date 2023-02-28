@@ -1,7 +1,7 @@
 import { getPostCount, getPosts } from '~~/server/db/posts'
 import { postTransformer } from '~~/server/transformers/post'
 export default defineEventHandler(async (event) => {
-	const query = useQuery(event)
+	const query = getQuery(event)
 	const keyword = query?.keyword
 	const count = await getPostCount({}, keyword)
 	const offset = query?.offset || 1

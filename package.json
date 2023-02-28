@@ -2,18 +2,18 @@
 	"private": true,
 	"scripts": {
 		"build": "nuxt build",
-		"dev": "nuxt dev --port 4000",
+		"dev": "nuxt dev --port 4000 --trace-warnings",
 		"generate": "nuxt generate",
 		"preview": "nuxt preview --port 4000"
 	},
 	"devDependencies": {
 		"@nuxt/image-edge": "^1.0.0-27657146.da85542",
 		"@nuxtjs/robots": "^2.5.0",
-		"@nuxtjs/tailwindcss": "^5.3.2",
-		"@tailwindcss/typography": "^0.5.4",
+		"@nuxtjs/tailwindcss": "^6.4.1",
+		"@tailwindcss/typography": "^0.5.9",
 		"autoprefixer": "^10.4.8",
 		"axios": "^0.27.2",
-		"nuxt": "^3.0.0-rc.11"
+		"nuxt": "^3.2.2"
 	},
 	"dependencies": {
 		"@bytemd/plugin-frontmatter": "^1.17.2",

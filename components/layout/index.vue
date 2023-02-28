@@ -1,6 +1,6 @@
 <template>
 	<div :class="[{ dark: darkMode }, defaultTransition]">
-		<div class="bg-white dark:bg-dim-100 font-sans select-none">
+		<div class="bg-white dark:bg-dim-100 font-sans">
 			<div
 				class="grid grid-cols-12 mx-auto sm:px-6 lg:gap-8 gap-6 lg:max-w-7xl lg:px-6 md:px-4 px-2 xs:px-8"
 			>
@@ -37,7 +37,10 @@
 				<div
 					class="text-center text-him-100 dark:text-dim-200 text-base font-extralight py-4 border-t col-span-12 border-him-300 dark:border-dim-400 h-full"
 				>
-					© 2022 hi - blog <br />京ICP备2022015573号-1
+					© 2022 hi - blog <br />
+					<nuxt-link to="https://beian.miit.gov.cn/" target="_blank"
+						>京ICP备2022015573号-1</nuxt-link
+					>
 				</div>
 			</div>
 		</div>

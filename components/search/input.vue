@@ -62,7 +62,8 @@ const handleInput = async () => {
 			return
 		}
 		const { data } = await getHomePosts({ keyword })
-		searchPanelPost.value = data
+		console.log()
+		searchPanelPost.value = data.value.data
 	} catch (error) {
 		console.log(error)
 	}

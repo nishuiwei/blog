@@ -43,7 +43,6 @@ const getHomeTypesReq = async () => {
 		console.log(error)
 	}
 }
-onBeforeMount(() => {
-	getHomeTypesReq()
-})
+
+await getHomeTypesReq()
 </script>

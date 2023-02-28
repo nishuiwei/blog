@@ -1,13 +1,10 @@
-import { defineNuxtConfig } from 'nuxt'
+import { defineNuxtConfig } from 'nuxt/config'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-	modules: ['@nuxt/image-edge', '@nuxtjs/tailwindcss', '~/modules/sitemap'],
-	sitemap: {
-		hostname: 'https://weihuijieonline.com',
-	},
+	modules: ['@nuxt/image-edge', '@nuxtjs/tailwindcss'],
 	app: {
 		head: {
-			title: 'hi - blog',
+			title: 'hi - blog 我的技术分享',
 			viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
 			charset: 'utf-8',
 			meta: [
@@ -72,4 +69,5 @@ export default defineNuxtConfig({
 			crawlLinks: true,
 		},
 	},
+	devServerHandlers: [],
 })
